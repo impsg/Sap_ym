@@ -1,0 +1,56 @@
+<odoo>
+
+    <record id="res_config_settings_view_form_Sap_ym" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.crm.Sap_ym</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="SAP" string="SAP" data-key="Sap_ym">
+                    <h2>SAP</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="o_setting_left_pane">
+                           <label for="url" name="url"/>
+                            <field name="url" />
+                        </div>
+                        <div class="o_setting_left_pane">
+                            <label for="UserName" name="UserName"/>
+                            <field name="UserName" />
+
+                        </div>
+                        <div class="o_setting_left_pane">
+                            <label for="Password" name="Password"/>
+                            <field name="Password" password="True"/>
+
+                        </div>
+                        <div class="o_setting_left_pane">
+                            <label for="CompanyDB" name="CompanyDB"/>
+                            <field name="CompanyDB" password="True"/>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+      <record model="ir.actions.act_window" id="action_Sap_ym_config_settings">
+          <field name="name">create</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.config.settings</field>
+          <field name="view_id" ref="res_config_settings_view_form_Sap_ym"/>
+          <field name="view_mode">form</field>
+          <field name="target">inline</field>
+          <field name="context">{'module': 'Sap_ym'}</field>
+      </record>
+
+
+<!--      <menuitem name="SAP"-->
+<!--                id="menu_opsleads_config"-->
+<!--                parent="crm.crm_menu_config"-->
+<!--                action="action_opsleads_config_settings"/>-->
+</odoo>

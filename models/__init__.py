@@ -1,0 +1,1 @@
+from . import sap_cust, res_config_settings,res_partner_inherit
